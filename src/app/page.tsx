@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import AddRecipe from "./components/AddRecipe";
 import SearchRecipes from "./components/SearchRecipes";
+import EditRecipe from "./components/EditRecipe";
 
 interface Recipe {
   id: number;
@@ -41,6 +42,7 @@ export default function Home() {
             <li key={recipe.id} className="border p-4 my-2 rounded-lg">
               <h2 className="text-lg font-semibold">{recipe.title}</h2>
               <p className="text-gray-700">{recipe.ingredients}</p>
+              <EditRecipe id={recipe.id} />
             </li>
           ))}
         </ul>
